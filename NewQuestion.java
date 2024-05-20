@@ -10,7 +10,7 @@ public class NewQuestion extends javax.swing.JFrame {
 
     public NewQuestion() {
         initComponents();
-        jComboBox1.addActionListener(new ActionListener() {
+       jComboBox1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String selectedSubject = (String) jComboBox1.getSelectedItem();
@@ -19,25 +19,43 @@ public class NewQuestion extends javax.swing.JFrame {
                         jLabel14.setText("1"); // subject_id for OOP is 1
                         break;
                     case "Database":
-                        jLabel14.setText("2"); // subject_id for Java is 2
+                        jLabel14.setText("2"); // subject_id for Database is 2
                         break;
                     case "C++":
                         jLabel14.setText("3"); // subject_id for C++ is 3
                         break;
                     case "Java":
-                        jLabel14.setText("4"); // subject_id for Database is 4
+                        jLabel14.setText("4"); // subject_id for Java is 4
                         break;
                     default:
-                        // Handle other subjects or default case
                         jLabel14.setText(""); // Set an appropriate default value
                         break;
                 }
+                updateQuestionId(selectedSubject);
             }
         });
+    }
+
+    private void updateQuestionId(String selectedSubject) {
         try {
             Connection con = DatabaseConnection.getCon();
             Statement st = con.createStatement();
-            ResultSet re = st.executeQuery("select count(question_id) from oop_quiz ");
+            String query = "";
+            switch (selectedSubject) {
+                case "OOP":
+                    query = "select count(question_id) from oop_quiz";
+                    break;
+                case "Database":
+                    query = "select count(question_id) from database_quiz";
+                    break;
+                case "C++":
+                    query = "select count(question_id) from cpp_quiz";
+                    break;
+                case "Java":
+                    query = "select count(question_id) from java_quiz";
+                    break;
+            }
+            ResultSet re = st.executeQuery(query);
             if (re.next()) {
                 int question_id = re.getInt(1);
                 question_id += 1;
@@ -46,12 +64,11 @@ public class NewQuestion extends javax.swing.JFrame {
             } else {
                 jLabel12.setText("1");
             }
-
         } catch (Exception e) {
             JFrame jf = new JFrame();
             jf.setAlwaysOnTop(true);
             JOptionPane.showMessageDialog(jf, e);
-        }
+        }   
     }
 
     /**
