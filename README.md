@@ -30,7 +30,7 @@ The application is structured around crucial modules: Student and Admin authenti
 
 
 ## Credits
--The other contributors are https://github.com/Misbah-shaheen and
+-The other contributors are Hareem Fatima and Misbah shaheen (https://github.com/Misbah-shaheen)
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
