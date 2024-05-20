@@ -1,16 +1,15 @@
-# Online Store Management System
+# Quiz Application
 
 ## Overview
 
-The Online Store Management System is a Java application designed to simulate the management of an online store. The system allows users to add, edit, and remove products, manage orders and payments, and provides a user-friendly interface for seamless interaction.
+The Quiz Application is a sophisticated Java Application with a user-friendly Graphical User Interface (GUI) designed to facilitate interactive and engaging quiz sessions. This project aims to provide users with a platform to create and participate in quizzes across various subjects and topics. By leveraging Java libraries and Swing, the application ensures both efficiency and cross platform compatibility.   
 
 ## Features
 
-- **Product Management**: Add, edit, and remove products.
-- **Order Management**: Create and manage customer orders.
-- **Payment Management**: Handle various payment methods.
+- **Student Login**: Register or login and solve questions of different Subjects.
+- **Admin Login**: Add questions,View Result,View all questions.
 - **User Interface**: A GUI built with Java Swing for easy interaction.
-- **Database Integration**: Store and retrieve data from a relational database.
+- **Database Integration**: Store and retrieve data from a relational database mySQL.
 
 ## Technologies Used
 
@@ -19,8 +18,3 @@ The Online Store Management System is a Java application designed to simulate th
 - **JDBC**: For database connectivity.
 - **MySQL**: Database management system.
 
-## Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/online-store-management-system.git
